@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+.Card-Padding{
+  padding: 15px;
+}
+
 
 .App-logo {
   height: 40vmin;
