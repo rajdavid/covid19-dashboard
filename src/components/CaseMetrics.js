@@ -27,8 +27,6 @@ const useStyles = makeStyles({
   },
 });
 class MetricsCard extends Component {
- 
- 
   render() {
     const {classes} = this.props
     return (

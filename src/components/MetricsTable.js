@@ -27,16 +27,6 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-// function createData(states, total,active,recovered,deaths,testPerMil,noOfIcuBed) {
-//   return {states, total,active,recovered,deaths,testPerMil,noOfIcuBed};
-// }
-
-//we create class variable under constructor under this.state
-//const rows=this.state.data
-// const rows = [
-//   createData('Bihar', 159, 6.0, 24, 4.0, 4, 5)
-// ];
-
 const useStyles = makeStyles({
   table: {
     minWidth: 700,

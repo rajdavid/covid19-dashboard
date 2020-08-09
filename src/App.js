@@ -53,7 +53,6 @@ class App extends Component {
     let self=this;
     axios.get('https://api.covid19india.org/state_test_data.json')
         .then(function (response) {
-          //console.log(response.data.states_tested_data);
           let tData = response.data.states_tested_data;
           self.setState({ testingData: tData.filter(obj => obj.updatedon === "08/08/2020") },
             () => {
@@ -83,8 +82,7 @@ class App extends Component {
     .finally(function () {
     });    
 }
-
-  render() {
+render() {
     return (
       <div className="App">
         <AppHeader />
