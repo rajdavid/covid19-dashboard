@@ -4,6 +4,9 @@
 .Card-Padding{
   padding: 15px;
 }
+.Table-Padding{
+  padding: 15px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
