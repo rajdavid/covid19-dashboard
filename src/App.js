@@ -71,7 +71,7 @@ class App extends Component {
   getPatientData =() =>  {
     var self=this
     axios.get('https://api.covid19india.org/data.json')
-        .then(function (response) {
+        .then(response => {
           self.setState({ data: response.data.statewise }, () => {
             self.getTestingData()
           })
