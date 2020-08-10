@@ -69,18 +69,31 @@ class App extends Component {
   }
 
   getPatientData =() =>  {
-    var self=this
-    axios.get('https://api.covid19india.org/data.json')
-        .then(response => {
-          self.setState({ data: response.data.statewise }, () => {
-            self.getTestingData()
-          })
-    })
-    .catch(function (error) {
-        console.log(error);
-    })
-    .finally(function () {
-    });    
+    
+    /**
+     * added fetch for getting data from api
+    */
+    fetch('https://api.covid19india.org/data.json')
+        .then(response => response.json())
+      .then(data => {
+        this.setState({ data: data.statewise },
+          () => {
+          this.getTestingData()
+        })
+      });
+
+      //var self=this
+    // axios.get('https://api.covid19india.org/data.json')
+    //     .then(response => {
+    //       self.setState({ data: response.data.statewise }, () => {
+    //         self.getTestingData()
+    //       })
+    // })
+    // .catch(function (error) {
+    //     console.log(error);
+    // })
+    // .finally(function () {
+    // });    
 }
 render() {
     return (
