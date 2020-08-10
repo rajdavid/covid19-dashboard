@@ -17,7 +17,8 @@ const useStyles = makeStyles({
     transform: 'scale(0.8)',
   },
   title: {
-    fontSize: 14,
+    fontSize: 25,
+    fontWeight:"bold",
   },
     pos: {
         marginLeft: 12,
@@ -30,7 +31,7 @@ class MetricsCard extends Component {
   render() {
     const {classes} = this.props
     return (
-      <Card className={classes.root}>
+      <Card   className={classes.root}>
         <CardContent>
           <Typography variant="h5" component="h2">
             {this.props.text}
