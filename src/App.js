@@ -5,6 +5,7 @@ import MetricsCard from './components/CaseMetrics';
 import Grid from '@material-ui/core/Grid';
 import DataTable from './components/MetricsTable';
 import axios from 'axios';
+//import { shadows } from '@material-ui/system';
 
 class App extends Component {
 
@@ -135,16 +136,17 @@ render() {
         <br />
         <div id="cases" className="Card-Padding">
         
-          <Grid container >
-            <Grid item md={2}>
-              <MetricsCard text={"Confirmed"}
+          <Grid container spacing={4} className="Grid-padding" boxShadow={3}>
+            
+            <Grid item xs={12} sm={6} md={2}>
+              <MetricsCard  text={"Confirmed"}
                 val={
                   this.state.data[0]!==undefined ?
                   this.state.data[0].confirmed :""
                 } />
             </Grid>
           
-            <Grid item md={2}>
+            <Grid item xs={12} sm={6} md={2}>
             <MetricsCard text={"Active"}
                 val={
                   this.state.data[0]!==undefined ?
@@ -152,7 +154,7 @@ render() {
                 } />
             </Grid>
           
-            <Grid item md={2}>
+            <Grid item xs={12} sm={6} md={2}>
             <MetricsCard text={"Recovered"}
                 val={
                   this.state.data[0]!==undefined ?
@@ -160,7 +162,7 @@ render() {
                 } />
             </Grid>
           
-            <Grid item md={2}>
+            <Grid item xs={12} sm={6} md={2}>
             <MetricsCard text={"Deaths"}
                 val={
                   this.state.data[0]!==undefined ?
@@ -168,16 +170,17 @@ render() {
                 } />
             </Grid>
 
-            <Grid item md={2}>
+            <Grid item xs={12} sm={6} md={2}>
             <MetricsCard text={"Tested"}
                 val={
                   this.state.testedData.totalsamplestested!==undefined ?
                   this.state.testedData.totalsamplestested :""
-                } />
+                } 
+                />
             </Grid>
 
-            <Grid item md={2}>
-            <MetricsCard text={"Test Per Million"}
+            <Grid item xs={12} sm={6} md={2}>
+            <MetricsCard text={"Test Per Mill."}
                 val={
                   this.state.testedData.testspermillion!==undefined ?
                   this.state.testedData.testspermillion :""
@@ -187,7 +190,7 @@ render() {
 
           </Grid>
         </div>
-        <div style={{ padding: '15px' }}>
+        <div className="Table-Padding">
           <DataTable val={this.state.mergedData}/>
         </div>
       </div>

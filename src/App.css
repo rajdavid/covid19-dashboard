@@ -1,11 +1,18 @@
 .App {
   text-align: center;
 }
+.Grid-padding{
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .Card-Padding{
   padding: 15px;
 }
+.Card-Color{
+  color: red;
+}
 .Table-Padding{
-  padding: 15px;
+  padding: 20px;
 }
 .App-logo {
   height: 40vmin;
