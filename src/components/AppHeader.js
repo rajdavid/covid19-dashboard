@@ -27,7 +27,7 @@ export default function AppHeader() {
             
           }
           <Typography variant="h6" className={classes.title}>
-            Covid-19 DashBoard
+            Covid-19 DashBoard - India
           </Typography>
         </Toolbar>
       </AppBar>
