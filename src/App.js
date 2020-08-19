@@ -167,7 +167,7 @@ render() {
                 val={
                   this.state.data[0]!==undefined ?
                   this.state.data[0].deaths :""
-                } />
+                }  onclick="https//google.com" />
             </Grid>
 
             <Grid item xs={12} sm={6} md={2}>

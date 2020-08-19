@@ -10,8 +10,10 @@ import Paper from '@material-ui/core/Paper';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    backgroundColor: theme.palette.primary.light,
+    color: theme.palette.common.black,
+    fontSize: 16,
+    fontWeight:"bolder"
   },
   body: {
     fontSize: 14,
@@ -46,9 +48,9 @@ class DataTableComponent extends Component {
         return (
             <TableContainer component={Paper}>
               <Table className={classes.table} aria-label="customized table">
-                <TableHead>
+              <TableHead style={{color:"darkgoldenrod"}}>
                   <TableRow>
-                    <StyledTableCell align="center">States/UT </StyledTableCell>
+                    <StyledTableCell align="center" style={{color:"white"}}>States/UT </StyledTableCell>
                     <StyledTableCell align="center">Confirmed</StyledTableCell>
                     <StyledTableCell align="center">Active</StyledTableCell>
                     <StyledTableCell align="center">Recovered</StyledTableCell>
