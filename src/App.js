@@ -60,12 +60,12 @@ class App extends Component {
         .then(function (response) {
           //console.log(response)
           let tData = response.data.states_tested_data;
-          
-          self.setState({testingData: tData.filter(obj => obj.updatedon === "08/08/2020")},
-            () => {
-            self.mergeData()
-          })
-          
+          if (tData !== undefined) {
+            self.setState({ testingData: tData.filter(obj => obj.updatedon === "08/08/2020") },
+              () => {
+                self.mergeData()
+              })
+          }
         })
     .catch(function (error) {
         console.log("from error ",error);
@@ -94,10 +94,12 @@ class App extends Component {
 
     var self=this
     axios.get('https://api.covid19india.org/data.json')
-        .then(response => {
+      .then(response => {
+        if (response !== undefined) {
           self.setState({ data: response.data.statewise }, () => {
             self.getTestingData()
           })
+        }
     })
     .catch(function (error) {
         //console.log(error);
@@ -113,12 +115,14 @@ class App extends Component {
      let td = this
      axios.get('https://api.covid19india.org/data.json')
      .then(function (response) {
-      //console.log('from whole country data',response)
-       let tData = response.data.tested;
-       tData=tData[tData.length-1]
-       //console.log("testted Data", tData);
-       //console.log("length of tested data",tData.length)
-       td.setState({ testedData: tData })
+       if (response !== undefined) {
+         //console.log('from whole country data',response)
+         let tData = response.data.tested;
+         tData = tData[tData.length - 1]
+         //console.log("testted Data", tData);
+         //console.log("length of tested data",tData.length)
+         td.setState({ testedData: tData })
+       }
      })
       .catch(function (error) {
           console.log(error);
