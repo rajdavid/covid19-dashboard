@@ -116,7 +116,7 @@ class App extends Component {
       //console.log('from whole country data',response)
        let tData = response.data.tested;
        tData=tData[tData.length-1]
-       console.log("testted Data", tData);
+       //console.log("testted Data", tData);
        //console.log("length of tested data",tData.length)
        td.setState({ testedData: tData })
      })
