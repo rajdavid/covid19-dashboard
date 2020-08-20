@@ -60,7 +60,9 @@ class App extends Component {
         .then(function (response) {
           //console.log(response)
           let tData = response.data.states_tested_data;
-          if (tData !== undefined) {
+          if (tData !== undefined &&
+            response !== undefined &&
+            response.data.sresponse.data.states_tested_data > 0) {
             self.setState({ testingData: tData.filter(obj => obj.updatedon === "08/08/2020") },
               () => {
                 self.mergeData()
@@ -95,7 +97,7 @@ class App extends Component {
     var self=this
     axios.get('https://api.covid19india.org/data.json')
       .then(response => {
-        if (response !== undefined) {
+        if (response !== undefined  && response.data.statewise.length>0) {
           self.setState({ data: response.data.statewise }, () => {
             self.getTestingData()
           })
@@ -115,7 +117,8 @@ class App extends Component {
      let td = this
      axios.get('https://api.covid19india.org/data.json')
      .then(function (response) {
-       if (response !== undefined) {
+       if (response !== undefined &&
+        response.data.tested.length>0) {
          //console.log('from whole country data',response)
          let tData = response.data.tested;
          tData = tData[tData.length - 1]
