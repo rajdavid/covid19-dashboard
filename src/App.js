@@ -100,7 +100,7 @@ class App extends Component {
           })
     })
     .catch(function (error) {
-        console.log(error);
+        //console.log(error);
     })
     .finally(function () {
     });
@@ -126,7 +126,7 @@ class App extends Component {
       .finally(function () {
 
       });
-      console.log('after filtering data', this.testedData);
+      //console.log('after filtering data', this.testedData);
     }
 render() {
     return (
