@@ -27,7 +27,7 @@ class DataFetch extends Component {
         }
         return (
             <div>
-                {this.state.statewise[0].active}
+                {this.state.statewise[0].recovered}
             </div>
         )
     }
